@@ -24,10 +24,9 @@ public class BaseTest {
         Configuration.browser = SystemProperties.browser();
         Configuration.browserVersion = SystemProperties.browserVersion();
         Configuration.browserSize = SystemProperties.browserSize();
-        Configuration.remote = SystemProperties.remoteUrl();/*
-        if (SystemProperties.remoteUrl() != null) {
+        if (!SystemProperties.remoteUrl().equals("")) {
             Configuration.remote = SystemProperties.remoteUrl();
-        }*/
+        }
     }
 
     @AfterEach
