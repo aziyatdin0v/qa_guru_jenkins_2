@@ -3,7 +3,7 @@ package com.demoqa.properties;
 public class SystemProperties {
 
     public static String browser() {
-        return System.getProperty("browser", "opera");
+        return System.getProperty("browser", "chrome");
     }
 
     public static String browserVersion() {
@@ -15,6 +15,6 @@ public class SystemProperties {
     }
 
     public static String remoteUrl() {
-        return System.getProperty("remoteUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        return System.getProperty("remoteUrl", ""); //https://user1:1234@selenoid.autotests.cloud/wd/hub
     }
 }
