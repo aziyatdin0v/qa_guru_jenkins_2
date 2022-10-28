@@ -1,6 +1,7 @@
 package com.demoqa.helpers;
 
 import com.codeborne.selenide.Selenide;
+import com.demoqa.properties.SystemProperties;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -42,6 +43,7 @@ public class Attach {
                 + getVideoUrl()
                 + "' type='video/mp4'></video></body></html>";
     }
+
 
     public static URL getVideoUrl() {
         String videoUrl = "https://selenoid.autotests.cloud/video/" + getSessionId() + ".mp4";
