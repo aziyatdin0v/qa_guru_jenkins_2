@@ -4,10 +4,14 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.demoqa.helpers.Attach;
 import com.demoqa.properties.SystemProperties;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
 
 public class BaseTest {
 
@@ -19,7 +23,6 @@ public class BaseTest {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
-        //Configuration.holdBrowserOpen = true;
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browser = SystemProperties.browser();

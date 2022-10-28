@@ -1,0 +1,11 @@
+5443293144:AAFBllWSpEjFm5UjOn45gQlwy0yP0oAeKaU
+test_qa_guru_bot
+-1001845534467
+
+https://api.telegram.org/bot5443293144:AAFBllWSpEjFm5UjOn45gQlwy0yP0oAeKaU/getUpdates
+
+curl -X POST  -H 'Content-Type: application/json'  -d '{"chat_id": "-1001842164200", "text": "123", "disable_notification": false}' https://api.telegram.org/bot5443293144:AAFBllWSpEjFm5UjOn45gQlwy0yP0oAeKaU/sendMessage
+
+
+java "-DconfigFile=notifications/telegram.json" -jar notifications/allure-notifications-4.2.1.jar
+
