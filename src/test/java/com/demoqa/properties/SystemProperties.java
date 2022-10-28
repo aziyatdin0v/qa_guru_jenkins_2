@@ -3,11 +3,11 @@ package com.demoqa.properties;
 public class SystemProperties {
 
     public static String browser() {
-        return System.getProperty("browser", "chrome");
+        return System.getProperty("browser", "firefox");
     }
 
     public static String browserVersion() {
-        return System.getProperty("browserVersion", "100");
+        return System.getProperty("browserVersion", "106");
     }
 
     public static String browserSize() {
