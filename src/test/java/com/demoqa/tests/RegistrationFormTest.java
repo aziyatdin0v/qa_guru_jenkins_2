@@ -26,7 +26,7 @@ public class RegistrationFormTest extends BaseTest {
                     .setBirthDate(day, month, year)
                     .setSubjects(subject)
                     .setHobbies(hobbies)
-                    .setUploadPicture(picture)
+                    //.setUploadPicture(picture)
                     .setCurrentAddress(address)
                     .setStateAndCity(state, city)
                     .setSubmit();
@@ -41,7 +41,7 @@ public class RegistrationFormTest extends BaseTest {
                     .checkResult("Date of Birth", day + " " + month + "," + year)
                     .checkResult("Subjects", subject)
                     .checkResult("Hobbies", hobbies)
-                    .checkResult("Picture", picture)
+                    //.checkResult("Picture", picture)
                     .checkResult("Address", address)
                     .checkResult("State and City", state + " " + city);
         });
