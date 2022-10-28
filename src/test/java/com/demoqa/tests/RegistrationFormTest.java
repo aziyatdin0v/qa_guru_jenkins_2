@@ -1,8 +1,10 @@
 package com.demoqa.tests;
 
 import com.demoqa.pages.RegistrationFormPage;
+import com.demoqa.properties.SystemProperties;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+
 import static com.demoqa.utils.TestData.*;
 import static io.qameta.allure.Allure.step;
 
@@ -26,10 +28,12 @@ public class RegistrationFormTest extends BaseTest {
                     .setBirthDate(day, month, year)
                     .setSubjects(subject)
                     .setHobbies(hobbies)
-                    //.setUploadPicture(picture)
                     .setCurrentAddress(address)
                     .setStateAndCity(state, city)
                     .setSubmit();
+            if (!SystemProperties.browser().equals("firefox")) {
+                registrationFormPage.setUploadPicture(picture);
+            }
         });
 
         step("Check form results", () -> {
@@ -41,9 +45,11 @@ public class RegistrationFormTest extends BaseTest {
                     .checkResult("Date of Birth", day + " " + month + "," + year)
                     .checkResult("Subjects", subject)
                     .checkResult("Hobbies", hobbies)
-                    //.checkResult("Picture", picture)
                     .checkResult("Address", address)
                     .checkResult("State and City", state + " " + city);
+            if (!SystemProperties.browser().equals("firefox")) {
+                checkTable.setUploadPicture(picture);
+            }
         });
     }
 }

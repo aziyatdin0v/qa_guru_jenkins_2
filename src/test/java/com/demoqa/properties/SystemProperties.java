@@ -3,7 +3,7 @@ package com.demoqa.properties;
 public class SystemProperties {
 
     public static String browser() {
-        return System.getProperty("browser", "chrome");
+        return System.getProperty("browser", "firefox");
     }
 
     public static String browserVersion() {
