@@ -2,23 +2,25 @@ package com.demoqa.tests;
 
 import com.demoqa.pages.RegistrationFormPage;
 import com.demoqa.properties.SystemProperties;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.demoqa.utils.TestData.*;
 import static io.qameta.allure.Allure.step;
 
-public class RegistrationFormTest extends BaseTest {
+public class RegistrationFormTestBase extends TestBase {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
     RegistrationFormPage checkTable = new RegistrationFormPage();
 
     @Test
+    @Tag("test_form")
     void fillPracticeFormTest() {
 
         step("Open registrations form", () -> {
             registrationFormPage.openPage();
         });
 
-        step("Fill form", () -> {
+        step("fill form", () -> {
             registrationFormPage.setFirstName(firstName)
                     .setLastName(lastName)
                     .setEmail(email)
@@ -49,6 +51,27 @@ public class RegistrationFormTest extends BaseTest {
             if (!SystemProperties.browser().equals("firefox")) {
                 checkTable.setUploadPicture(picture);
             }
+        });
+    }
+
+    @Test
+    @Tag("test_form_with_minimum_data")
+    void fillPracticeFormWithMinimumDataTest() {
+        step("Open registrations form with minimum data", () -> {
+            registrationFormPage.openPage();
+        });
+        step("Fill form with minimum data", () -> {
+            registrationFormPage.setFirstName(firstName)
+                    .setLastName(lastName)
+                    .setGender(gender)
+                    .setPhoneNumber(phoneNumber)
+                    .setSubmit();
+        });
+        step("Check form results with minimum data", () -> {
+            registrationFormPage.checkResultsTableVisible()
+                    .checkResult("Student Name", firstName + " " + lastName)
+                    .checkResult("Gender", gender)
+                    .checkResult("Mobile", phoneNumber);
         });
     }
 }

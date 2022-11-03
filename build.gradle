@@ -52,3 +52,15 @@ tasks.withType(Test) {
         }
     }
 }
+
+task test_form(type: Test) {
+    useJUnitPlatform {
+        includeTags "test_form"
+    }
+}
+
+task test_form_with_minimum_data(type: Test) {
+    useJUnitPlatform {
+        includeTags "test_form_with_minimum_data"
+    }
+}
