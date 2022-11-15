@@ -15,6 +15,6 @@ public class SystemProperties {
     }
 
     public static String remoteUrl() {
-        return System.getProperty("remoteUrl", "http://192.168.31.197:4444/wd/hub"); //http://test:test-password@192.168.31.197:5555/wd/hub
+        return System.getProperty("remoteUrl", "http://192.168.31.197:4444/wd/hub");
     }
 }

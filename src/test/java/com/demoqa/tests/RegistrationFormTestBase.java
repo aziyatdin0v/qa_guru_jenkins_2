@@ -4,7 +4,6 @@ import com.demoqa.pages.RegistrationFormPage;
 import com.demoqa.properties.SystemProperties;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-
 import static com.demoqa.utils.TestData.*;
 import static io.qameta.allure.Allure.step;
 
