@@ -32,7 +32,7 @@ public class RegistrationFormTestBase extends TestBase {
                     .setCurrentAddress(address)
                     .setStateAndCity(state, city)
                     .setSubmit();
-            if (!SystemProperties.browser().equals("firefox")) {
+            if ((!SystemProperties.browser().equals("firefox")) & (!SystemProperties.browser().equals("safari"))) {
                 registrationFormPage.setUploadPicture(picture);
             }
         });
@@ -48,7 +48,7 @@ public class RegistrationFormTestBase extends TestBase {
                     .checkResult("Hobbies", hobbies)
                     .checkResult("Address", address)
                     .checkResult("State and City", state + " " + city);
-            if (!SystemProperties.browser().equals("firefox")) {
+            if ((!SystemProperties.browser().equals("firefox")) & (!SystemProperties.browser().equals("safari"))) {
                 checkTable.setUploadPicture(picture);
             }
         });

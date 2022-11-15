@@ -9,7 +9,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-
 public class TestBase {
 
     @BeforeAll
@@ -34,7 +33,7 @@ public class TestBase {
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
-        if (!SystemProperties.browser().equals("firefox")) {
+        if ((!SystemProperties.browser().equals("firefox")) & (!SystemProperties.browser().equals("safari"))) {
             Attach.browserConsoleLogs();
             Attach.addVideo();
         }
